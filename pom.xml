@@ -28,6 +28,8 @@
         <spring.cloud.alibaba.version>2021.0.4.0</spring.cloud.alibaba.version>
         <!--使用spring-boot-maven-plugin方式打包时跳过单元测试-->
         <skipTests>true</skipTests>
+
+        <mybatis-plus-boot-starter.version>3.5.2</mybatis-plus-boot-starter.version>
     </properties>
 
     <!-- 锁定版本 -->
@@ -63,6 +65,12 @@
                 <groupId>pers.iiifox</groupId>
                 <artifactId>shop-common</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
