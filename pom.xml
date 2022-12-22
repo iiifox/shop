@@ -67,6 +67,20 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- provided 和 test 没有传递性，但有继承性 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <!--module不用添加打包版本信息-->
     <build>
         <plugins>
