@@ -102,10 +102,11 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
 
 #### 开发工具
 
-| 工具          | 说明                      | 官网                                        |
-| ------------- | ------------------------- | ------------------------------------------- |
-| IntelliJ IDEA | 领先的 Java 和 Kotlin IDE | https://www.jetbrains.com.cn/idea/download/ |
-| Typora        | Markdown 编辑器           | https://typora.io/                          |
+| 工具          | 说明                                 | 官网                                                |
+| ------------- | ------------------------------------ | --------------------------------------------------- |
+| IntelliJ IDEA | 领先的 Java 和 Kotlin IDE            | https://www.jetbrains.com.cn/idea/download/         |
+| Typora        | Markdown 编辑器                      | https://typora.io/                                  |
+| MyBatisX      | MyBatis-Plus官方代码生成插件（idea） | https://plugins.jetbrains.com/plugin/10119-mybatisx |
 
 #### 开发环境
 
