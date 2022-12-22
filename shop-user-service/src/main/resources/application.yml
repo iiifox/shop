@@ -1,3 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: shop-user-service
+
 mybatis-plus:
   global-config:
     db-config:
