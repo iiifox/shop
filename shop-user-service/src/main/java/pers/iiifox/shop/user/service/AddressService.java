@@ -10,4 +10,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface AddressService extends IService<Address> {
 
+    /**
+     * 根据收货地址表主键获取收货地址信息
+     *
+     * @param addressId 收货地址表主键
+     * @return 收货地址信息
+     */
+    Object detail(long addressId);
 }

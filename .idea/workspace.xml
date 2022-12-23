@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="开始编写用户服务。MyBatisX插件自动生成代码+手动修改tinyint映射为Boolean">
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="用户服务的数据源配置以及编写主启动类">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/config/LocalDateTimeFormatConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-common/src/main/resources/jackson.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +40,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="E:/maven-3.8.5" />
-        <option name="userSettingsFile" value="E:\maven-3.8.5\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -49,7 +57,7 @@
     </option>
   </component>
   <component name="MavenRunner">
-    <option name="jreName" value="#JAVA_HOME" />
+    <option name="jreName" value="17" />
   </component>
   <component name="ProjectId" id="2JHJ0JPkyeLwZQw0Gd77m4RFJk9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,6 +70,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path": "E:\\repository\\com\\github\\xiaoymin\\knife4j-openapi3-spring-boot-starter\\4.0.0",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "ResultTool:MODULE_HTTP_CONFIG:shop-user-service": "{\"port\":\"11111\"}",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -73,8 +91,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "5b8f64f4ae156dfee248e492032d3691",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Groovy compiler",
+    "spring.configuration.checksum": "c75f901807a578f3dcd2ff6fab1dade1",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -86,6 +107,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\projects\shop" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\projects\shop\shop-common\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -118,7 +142,10 @@
       <updated>1671728855552</updated>
       <workItem from="1671728858441" duration="4349000" />
       <workItem from="1671733281744" duration="4013000" />
-      <workItem from="1671737682958" duration="4631000" />
+      <workItem from="1671737682958" duration="7145000" />
+      <workItem from="1671744947757" duration="27000" />
+      <workItem from="1671744978811" duration="2011000" />
+      <workItem from="1671754230292" duration="25968000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -155,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671741548831</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="用户服务的数据源配置以及编写主启动类">
+      <created>1671742455176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671742455176</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +215,7 @@
     <MESSAGE value="聚合工程添加lombok与test" />
     <MESSAGE value="服务通用模块添加web环境、mysql和MyBatis-Plus依赖" />
     <MESSAGE value="开始编写用户服务。MyBatisX插件自动生成代码+手动修改tinyint映射为Boolean" />
-    <option name="LAST_COMMIT_MESSAGE" value="开始编写用户服务。MyBatisX插件自动生成代码+手动修改tinyint映射为Boolean" />
+    <MESSAGE value="用户服务的数据源配置以及编写主启动类" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户服务的数据源配置以及编写主启动类" />
   </component>
 </project>

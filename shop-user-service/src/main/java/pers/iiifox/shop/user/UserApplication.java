@@ -16,7 +16,7 @@ import java.net.UnknownHostException;
  * @createDate 2022/12/23 4:47
  */
 @Slf4j
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"pers.iiifox.shop.user", "pers.iiifox.shop.config"})
 @MapperScan("pers.iiifox.shop.user.mapper")
 public class UserApplication {
 
@@ -26,7 +26,7 @@ public class UserApplication {
         String ip = InetAddress.getLocalHost().getHostAddress();
         Environment env = run.getEnvironment();
         String port = env.getProperty("server.port");
-        // 未配置默认8080
+        // 未配置端口号，则默认 8080
         if (port == null) {
             port = "8080";
         }
