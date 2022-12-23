@@ -16,7 +16,7 @@ public class AddressServiceImpl extends ServiceImpl<AddressMapper, Address>
     implements AddressService{
 
     @Override
-    public Object detail(long addressId) {
+    public Object getOneAddress(long addressId) {
         return super.getById(addressId);
     }
 }
