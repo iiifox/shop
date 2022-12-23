@@ -16,5 +16,5 @@ public interface AddressService extends IService<Address> {
      * @param addressId 收货地址表主键
      * @return 收货地址信息
      */
-    Object getOneAddress(long addressId);
+    Address getAddress(long addressId);
 }

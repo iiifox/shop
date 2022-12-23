@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pers.iiifox.shop.result.R;
 import pers.iiifox.shop.user.service.AddressService;
 
 /**
@@ -24,8 +25,8 @@ public class AddressController {
 
     @Operation(summary = "根据地址id获取地址信息")
     @GetMapping("/find/{address_id}")
-    public Object getOneAddress(@PathVariable("address_id") long addressId) {
-        return addressService.getOneAddress(addressId);
+    public R getAddress(@PathVariable("address_id") long addressId) {
+        return R.ok(addressService.getAddress(addressId));
     }
 
 }

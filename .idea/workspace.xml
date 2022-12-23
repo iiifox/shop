@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="收货地址接口编写+解决前后端交互LocalDateTime格式问题">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/config/SpringDocConfig.java" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="SpringDoc的初步整合">
+      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/ErrorCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/UserApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/UserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/UserApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/AddressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/AddressController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/AddressServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Groovy compiler",
+    "settings.editor.selected.configurable": "Errors",
     "spring.configuration.checksum": "c75f901807a578f3dcd2ff6fab1dade1",
     "vue.rearranger.settings.migration": "true"
   },
@@ -146,7 +143,7 @@
       <workItem from="1671737682958" duration="7145000" />
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
-      <workItem from="1671754230292" duration="32587000" />
+      <workItem from="1671754230292" duration="37426000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -197,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671781110616</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SpringDoc的初步整合">
+      <created>1671787990602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671787990602</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +229,7 @@
     <MESSAGE value="开始编写用户服务。MyBatisX插件自动生成代码+手动修改tinyint映射为Boolean" />
     <MESSAGE value="用户服务的数据源配置以及编写主启动类" />
     <MESSAGE value="收货地址接口编写+解决前后端交互LocalDateTime格式问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="收货地址接口编写+解决前后端交互LocalDateTime格式问题" />
+    <MESSAGE value="SpringDoc的初步整合" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringDoc的初步整合" />
   </component>
 </project>
