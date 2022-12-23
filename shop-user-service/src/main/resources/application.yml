@@ -7,8 +7,6 @@ spring:
 mybatis-plus:
   global-config:
     db-config:
+      # 主键策略
       id-type: assign_id
 
-shop:
-  jackson:
-    local-date-time-format: yyyy-MM-dd HH:mm:ss

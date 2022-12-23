@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="修改javadoc注释">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="业务异常+全局异常处理器">
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/config/CaptchaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +144,7 @@
       <workItem from="1671737682958" duration="7145000" />
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
-      <workItem from="1671754230292" duration="39386000" />
+      <workItem from="1671754230292" duration="44353000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671793758423</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="业务异常+全局异常处理器">
+      <created>1671795860921</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671795860921</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +262,7 @@
     <MESSAGE value="统一返回结果集类" />
     <MESSAGE value="数据库表对应实体类类名后缀DO" />
     <MESSAGE value="修改javadoc注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改javadoc注释" />
+    <MESSAGE value="业务异常+全局异常处理器" />
+    <option name="LAST_COMMIT_MESSAGE" value="业务异常+全局异常处理器" />
   </component>
 </project>

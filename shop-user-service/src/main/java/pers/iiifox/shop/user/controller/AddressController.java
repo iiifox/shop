@@ -15,7 +15,7 @@ import pers.iiifox.shop.user.service.AddressService;
  * @description 收货地址 前端控制器
  * @date 2022/12/23
  */
-@Tag(name = "AddressController", description = "用户地址模块")
+@Tag(name = "AddressController", description = "收货地址")
 @RestController
 @RequestMapping("/api/address/v1")
 public class AddressController {

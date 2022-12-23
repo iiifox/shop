@@ -17,6 +17,11 @@
             <groupId>pers.iiifox</groupId>
             <artifactId>shop-common</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>kaptcha-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
