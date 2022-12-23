@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author 田章
  * @description OpenApi3.0 文档配置类
- * @createDate 2022/12/23 15:50
+ * @date 2022/12/23
  */
 @Configuration
 public class SpringDocConfig {

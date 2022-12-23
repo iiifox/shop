@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author 田章
  * @description 用户服务启动类
- * @createDate 2022/12/23 4:47
+ * @date 2022/12/23
  */
 @Slf4j
 @SpringBootApplication(scanBasePackages = {"pers.iiifox.shop.user", "pers.iiifox.shop.config"})

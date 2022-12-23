@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 /**
  * @author 田章
  * @description LocalDateTime 格式化配置类，解决前后端交互日期格式问题。
- * @createDate 2022/12/23 11:34
+ * @date 2022/12/23
  */
 @Configuration
 public class LocalDateTimeFormatConfig {
