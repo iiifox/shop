@@ -1,7 +1,7 @@
 package pers.iiifox.shop.user.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import pers.iiifox.shop.user.pojo.entity.Address;
+import pers.iiifox.shop.user.pojo.entity.AddressDO;
 import pers.iiifox.shop.user.service.AddressService;
 import pers.iiifox.shop.user.mapper.AddressMapper;
 import org.springframework.stereotype.Service;
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 * @createDate 2022-12-23 04:32:52
 */
 @Service
-public class AddressServiceImpl extends ServiceImpl<AddressMapper, Address>
+public class AddressServiceImpl extends ServiceImpl<AddressMapper, AddressDO>
     implements AddressService{
 
     @Override
-    public Address getAddress(long addressId) {
+    public AddressDO getAddress(long addressId) {
         return super.getById(addressId);
     }
 }

@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  */
 @TableName(value = "user")
 @Data
-public class User implements Serializable {
+public class UserDO implements Serializable {
     /**
      * 主键ID
      */
