@@ -19,10 +19,10 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public R Handle(Exception e) {
         if (e instanceof BizException) {
-            log.error("业务异常 --> {}", e);
+            log.error("业务异常 --> {}", e.getMessage());
             return R.error((BizException) e);
         } else {
-            log.error("系统异常 --> {}", e);
+            log.error("系统异常 --> {}", e.getMessage());
             return R.custorError("xxxxx", "全局异常，未知错误");
         }
     }
