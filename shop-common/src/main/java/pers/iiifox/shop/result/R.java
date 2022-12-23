@@ -3,6 +3,7 @@ package pers.iiifox.shop.result;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pers.iiifox.shop.exception.BizException;
 
 /**
  * @author 田章
@@ -24,7 +25,7 @@ public class R {
      * 四位数字编号从 0001 到 9999，大类之间的步长间距预留 100，
      * </p>
      */
-    private String errorCode;
+    private String code;
 
     /**
      * 描述信息
@@ -53,7 +54,11 @@ public class R {
     /**
      * 传入枚举，返回信息
      */
-    public static R error(ErrorCodeEnum errorCodeEnum) {
-        return new R(errorCodeEnum.getCode(), errorCodeEnum.getMessage(), null);
+    public static R error(BizException bizException) {
+        return R.custorError(bizException.getCode(), bizException.getMessage());
+    }
+
+    public static R custorError(String errorCode, String message) {
+        return new R(errorCode, message, null);
     }
 }
