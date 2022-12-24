@@ -1,5 +1,6 @@
 package pers.iiifox.shop.user.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailAuthenticationException;
@@ -17,6 +18,7 @@ import pers.iiifox.shop.user.service.MailService;
  * @description 邮箱 Service 实现类
  * @date 2022/12/24
  */
+@Slf4j
 @Service
 public class MailServiceImpl implements MailService {
 
@@ -38,9 +40,9 @@ public class MailServiceImpl implements MailService {
         } catch (MailParseException e) {
             throw new BizException(ErrorCodeEnum.USER_ERROR_A0153);
         } catch (MailAuthenticationException e) {
-        //
+            throw new BizException("系统邮箱认证失败", e);
         } catch (MailSendException e) {
-            throw new BizException(ErrorCodeEnum.SERVICE_ERROR_C0500);
+            throw new BizException("邮件发送失败", e);
         }
     }
 }
