@@ -64,11 +64,11 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
       `signature` varchar(255) DEFAULT NULL COMMENT '个性签名',
       `gender` tinyint(1) unsigned DEFAULT 1 COMMENT '0表示女，1表示男',
       `points` int(10) DEFAULT 0 COMMENT '积分',
-      `mail` varchar(255) DEFAULT NULL COMMENT '邮箱',
+      `email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
       `create_time` datetime NOT NULL COMMENT '创建时间',
       `update_time` datetime NOT NULL COMMENT '更新时间',
       PRIMARY KEY (`id`),
-      UNIQUE KEY `uk_mail` (`mail`(16))
+      UNIQUE KEY `uk_email` (`email`(16))
     ) ENGINE=InnoDB COMMENT='用户表';
     ```
 

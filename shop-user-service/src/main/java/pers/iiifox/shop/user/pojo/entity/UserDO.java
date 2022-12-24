@@ -53,9 +53,9 @@ public class UserDO implements Serializable {
     private Integer points;
 
     /**
-     * 邮箱
+     * 电子邮箱
      */
-    private String mail;
+    private String email;
 
     /**
      * 创建时间
