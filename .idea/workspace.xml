@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="修改用户表字段 mail -&gt; email">
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="修改Ip工具类">
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/test/java/pers/iiifox/shop/user/service/impl/MailServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/test/java/pers/iiifox/shop/util/MD5UtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/test/java/pers/iiifox/shop/util/MD5UtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/test-classes/pers/iiifox/shop/util/MD5UtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/test-classes/pers/iiifox/shop/util/MD5UtilsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/pojo/entity/UserDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/pojo/entity/UserDO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,10 +121,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pers.iiifox.shop.user.service.impl" />
       <recent name="pers.iiifox.shop.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MD5UtilsTest.testMd5">
+  <component name="RunManager" selected="JUnit.MailServiceImplTest.testSentEmail">
     <configuration name="MD5UtilsTest.testMd5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-common" />
       <extension name="coverage">
@@ -127,6 +137,22 @@
       <option name="PACKAGE_NAME" value="pers.iiifox.shop.util" />
       <option name="MAIN_CLASS_NAME" value="pers.iiifox.shop.util.MD5UtilsTest" />
       <option name="METHOD_NAME" value="testMd5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailServiceImplTest.testSentEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.iiifox.shop.user.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.iiifox.shop.user.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="pers.iiifox.shop.user.service.impl.MailServiceImplTest" />
+      <option name="METHOD_NAME" value="testSentEmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,6 +173,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MailServiceImplTest.testSentEmail" />
         <item itemvalue="JUnit.MD5UtilsTest.testMd5" />
         <item itemvalue="Spring Boot.UserApplication" />
       </list>
@@ -166,7 +193,7 @@
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
       <workItem from="1671754230292" duration="45789000" />
-      <workItem from="1671827368004" duration="36158000" />
+      <workItem from="1671827368004" duration="43717000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -301,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671876123333</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Md5工具类修改一行代码">
+      <created>1671877189422</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1671877189422</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修改Ip工具类">
+      <created>1671878879546</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671878879546</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +382,8 @@
     <MESSAGE value="IpUtils 声明 final" />
     <MESSAGE value="Redis缓存图形验证码" />
     <MESSAGE value="修改用户表字段 mail -&gt; email" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改用户表字段 mail -&gt; email" />
+    <MESSAGE value="Md5工具类修改一行代码" />
+    <MESSAGE value="修改Ip工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改Ip工具类" />
   </component>
 </project>
