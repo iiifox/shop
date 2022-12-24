@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pers.iiifox.shop.result.R;
+import pers.iiifox.shop.util.IpUtils;
+import pers.iiifox.shop.util.MD5Utils;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -32,9 +35,10 @@ public class NotifyController {
 
     @Operation(summary = "获取图形验证码")
     @GetMapping("/captcha")
-    public R getCaptcha(HttpServletResponse response) {
+    public R getCaptcha(HttpServletRequest request, HttpServletResponse response) {
         String captchaText = captchaProducer.createText();
         log.info("图形验证码: {}", captchaText);
+        cacheCaptcha(request, captchaText);
         BufferedImage image = captchaProducer.createImage(captchaText);
         try(ServletOutputStream outputStream = response.getOutputStream()) {
             ImageIO.write(image, "jpg", outputStream);
@@ -42,5 +46,12 @@ public class NotifyController {
             throw new RuntimeException(e);
         }
         return R.ok();
+    }
+
+    private void cacheCaptcha(HttpServletRequest request, String captchaText) {
+        String ip = IpUtils.getRemoteIp(request);
+        String header = request.getHeader("User-Agent");
+        String key = "user:captcha:" + MD5Utils.md5(ip + header);
+        System.out.println("===============");
     }
 }

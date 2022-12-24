@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="修改异常日志输出">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/enums/HttpHeaderEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/IpUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/IpUtilsfejoafnrefc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="添加 IP 工具类">
+      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/MD5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-common/src/test/java/pers/iiifox/shop/util/MD5UtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtilsfejoafnrefc.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -81,6 +79,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "F:/projects/shop/shop-common/src/main/java/pers/iiifox/shop/util",
     "node.js.detected.package.eslint": "true",
@@ -91,7 +91,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "spring.configuration.checksum": "059d8b961b4c437c3bab7f6f4f03108a",
     "vue.rearranger.settings.migration": "true"
   },
@@ -111,6 +111,12 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\projects\shop\shop-common\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pers.iiifox.shop.util" />
     </key>
   </component>
   <component name="RunManager">
@@ -147,7 +153,7 @@
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
       <workItem from="1671754230292" duration="45789000" />
-      <workItem from="1671827368004" duration="21761000" />
+      <workItem from="1671827368004" duration="32407000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -247,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671803727434</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加 IP 工具类">
+      <created>1671862249228</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1671862249228</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +295,18 @@
     <MESSAGE value="业务异常+全局异常处理器" />
     <MESSAGE value="添加Google kaptcha验证码" />
     <MESSAGE value="修改异常日志输出" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改异常日志输出" />
+    <MESSAGE value="添加 IP 工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加 IP 工具类" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
