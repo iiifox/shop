@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author 田章
@@ -32,6 +34,9 @@ public class NotifyController {
 
     @Autowired
     private Producer captchaProducer;
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Operation(summary = "获取图形验证码")
     @GetMapping("/captcha")
@@ -48,10 +53,14 @@ public class NotifyController {
         return R.ok();
     }
 
+    /**
+     * 将图形验证码文字缓存到 Redis，有效期一分钟
+     */
     private void cacheCaptcha(HttpServletRequest request, String captchaText) {
         String ip = IpUtils.getRemoteIp(request);
-        String header = request.getHeader("User-Agent");
-        String key = "user:captcha:" + MD5Utils.md5(ip + header);
-        System.out.println("===============");
+        String userAgent = request.getHeader("User-Agent");
+        String key = "user:captcha:" + MD5Utils.md5(ip + userAgent);
+        redisTemplate.opsForValue().set(key, captchaText, 1, TimeUnit.MINUTES);
     }
+
 }

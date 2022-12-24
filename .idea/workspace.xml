@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="添加 IP 工具类">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/MD5Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-common/src/test/java/pers/iiifox/shop/util/MD5UtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtilsfejoafnrefc.class" beforeDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="IpUtils 声明 final">
       <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +148,7 @@
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
       <workItem from="1671754230292" duration="45789000" />
-      <workItem from="1671827368004" duration="32407000" />
+      <workItem from="1671827368004" duration="34022000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -260,7 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671862249228</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="添加 MD5 工具类">
+      <created>1671872840303</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671872840303</updated>
+    </task>
+    <task id="LOCAL-00017" summary="IpUtils 声明 final">
+      <created>1671873024517</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671873024517</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,17 +305,8 @@
     <MESSAGE value="添加Google kaptcha验证码" />
     <MESSAGE value="修改异常日志输出" />
     <MESSAGE value="添加 IP 工具类" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 IP 工具类" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="添加 MD5 工具类" />
+    <MESSAGE value="IpUtils 声明 final" />
+    <option name="LAST_COMMIT_MESSAGE" value="IpUtils 声明 final" />
   </component>
 </project>
