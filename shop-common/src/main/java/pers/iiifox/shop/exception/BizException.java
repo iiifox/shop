@@ -1,7 +1,7 @@
 package pers.iiifox.shop.exception;
 
 import lombok.Getter;
-import pers.iiifox.shop.result.ErrorCodeEnum;
+import pers.iiifox.shop.enums.ErrorCodeEnum;
 
 /**
  * @author 田章
@@ -22,9 +22,15 @@ public class BizException extends RuntimeException {
     private String message;
 
     public BizException(ErrorCodeEnum errorCodeEnum) {
-        super(errorCodeEnum.getMessage());
-        this.code = errorCodeEnum.getCode();
-        this.message = errorCodeEnum.getMessage();
+        super(errorCodeEnum.message());
+        this.code = errorCodeEnum.code();
+        this.message = errorCodeEnum.message();
+    }
+
+    public BizException(RuntimeException e) {
+        super(e.getMessage(), e);
+        this.code = "xxxxx";
+        this.message = e.getMessage();
     }
 
 }

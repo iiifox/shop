@@ -1,15 +1,10 @@
-package pers.iiifox.shop.result;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+package pers.iiifox.shop.enums;
 
 /**
  * @author 田章
  * @description 错误码枚举类：源自阿里巴巴开发手册
  * @date 2022/12/23
  */
-@Getter
-@AllArgsConstructor
 public enum ErrorCodeEnum {
 
     /**
@@ -246,5 +241,18 @@ public enum ErrorCodeEnum {
 
     private final String code;
     private final String message;
+
+    ErrorCodeEnum(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public String code() {
+        return code;
+    }
+
+    public String message() {
+        return message;
+    }
 
 }

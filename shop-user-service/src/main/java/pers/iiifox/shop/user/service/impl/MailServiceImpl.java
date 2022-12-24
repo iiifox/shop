@@ -9,7 +9,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import pers.iiifox.shop.exception.BizException;
-import pers.iiifox.shop.result.ErrorCodeEnum;
+import pers.iiifox.shop.enums.ErrorCodeEnum;
 import pers.iiifox.shop.user.service.MailService;
 
 /**
