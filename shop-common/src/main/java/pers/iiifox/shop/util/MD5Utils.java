@@ -37,8 +37,8 @@ public final class MD5Utils {
             if ((b & 0xff) < 0x10) {
                 sb.append('0');
             }
-            // 先转为 int，再转 16 进制
-            sb.append(Integer.toString(b & 0xff, 16));
+            // 先转为 int，再转 16 进制（toHexString方法会自动去除前导零）
+            sb.append(Integer.toHexString(b & 0xff));
         }
         return sb.toString();
     }
