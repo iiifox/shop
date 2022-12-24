@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author 田章
  * @description IP 工具类
- * @date 2022/12/6
+ * @date 2022/12/24
  */
 public final class IpUtils {
 
@@ -44,8 +44,7 @@ public final class IpUtils {
     private static final String[] HEADERS_TO_TRY = {
             "Proxy-Client-IP",
             "WL-Proxy-Client-IP",
-            "HTTP_CLIENT_IP",
-            "HTTP_X_FORWARDED_FOR"
+            "HTTP_CLIENT_IP"
     };
 
     /**
