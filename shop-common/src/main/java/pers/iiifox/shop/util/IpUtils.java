@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @description IP 工具类
  * @date 2022/12/6
  */
-public class IpUtils {
+public final class IpUtils {
 
     private IpUtils() {
         throw new AssertionError("pers.iiifox.shop.util.IpUtils instances for you!");
