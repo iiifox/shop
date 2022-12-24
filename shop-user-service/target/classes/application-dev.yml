@@ -9,6 +9,11 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/shop_user?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: 123456
+  # Redis数据库配置
+  redis:
+    host: 192.168.1.101
+    password: 123456
+    port: 6379
 
 mybatis-plus:
   configuration:
