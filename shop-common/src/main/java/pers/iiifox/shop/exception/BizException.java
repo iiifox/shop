@@ -29,13 +29,7 @@ public class BizException extends RuntimeException {
 
     public BizException(String message, RuntimeException cause) {
         super(message, cause);
-        this.code = "*****";
-        this.message = message;
-    }
-
-    public BizException(String message) {
-        super(message);
-        this.code = "=====";
+        this.code = "xxxxx";
         this.message = message;
     }
 

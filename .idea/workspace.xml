@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="业务异常类新增构造方法修改">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/RegExUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/component/EmailComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/NotifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/NotifyServiceImpl.java" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="修改Ip工具类">
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/test/java/pers/iiifox/shop/user/service/impl/MailServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/MailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/MailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/test/java/pers/iiifox/shop/user/service/impl/MailServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/IpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/test-classes/pers/iiifox/shop/util/MD5UtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/test-classes/pers/iiifox/shop/util/MD5UtilsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/pojo/entity/UserDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/pojo/entity/UserDO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -67,45 +67,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path&quot;: &quot;E:\\repository\\com\\github\\xiaoymin\\knife4j-openapi3-spring-boot-starter\\4.0.0&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;ResultTool:MODULE_HTTP_CONFIG:shop-user-service&quot;: &quot;{\&quot;port\&quot;:\&quot;11111\&quot;}&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/projects/shop/shop-common/src/main/java/pers/iiifox/shop/util&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;059d8b961b4c437c3bab7f6f4f03108a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path": "E:\\repository\\com\\github\\xiaoymin\\knife4j-openapi3-spring-boot-starter\\4.0.0",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "ResultTool:MODULE_HTTP_CONFIG:shop-user-service": "{\"port\":\"11111\"}",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "F:/projects/shop/shop-common/src/main/java/pers/iiifox/shop/util",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "spring.configuration.checksum": "059d8b961b4c437c3bab7f6f4f03108a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -125,7 +125,39 @@
       <recent name="pers.iiifox.shop.util" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MailServiceImplTest.testSentEmail">
+    <configuration name="MD5UtilsTest.testMd5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.iiifox.shop.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.iiifox.shop.util" />
+      <option name="MAIN_CLASS_NAME" value="pers.iiifox.shop.util.MD5UtilsTest" />
+      <option name="METHOD_NAME" value="testMd5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailServiceImplTest.testSentEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.iiifox.shop.user.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.iiifox.shop.user.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="pers.iiifox.shop.user.service.impl.MailServiceImplTest" />
+      <option name="METHOD_NAME" value="testSentEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shop-user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.iiifox.shop.user.UserApplication" />
@@ -141,6 +173,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MailServiceImplTest.testSentEmail" />
+        <item itemvalue="JUnit.MD5UtilsTest.testMd5" />
         <item itemvalue="Spring Boot.UserApplication" />
       </list>
     </recent_temporary>
@@ -159,8 +193,7 @@
       <workItem from="1671744947757" duration="27000" />
       <workItem from="1671744978811" duration="2011000" />
       <workItem from="1671754230292" duration="45789000" />
-      <workItem from="1671827368004" duration="48239000" />
-      <workItem from="1671917925752" duration="10507000" />
+      <workItem from="1671827368004" duration="43717000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -309,28 +342,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671878879546</updated>
     </task>
-    <task id="LOCAL-00022" summary="邮件通知Service编写">
-      <created>1671886269431</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1671886269431</updated>
-    </task>
-    <task id="LOCAL-00023" summary="业务异常类新增构造方法，枚举类不使用lombok">
-      <created>1671886812993</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1671886812993</updated>
-    </task>
-    <task id="LOCAL-00024" summary="业务异常类新增构造方法修改">
-      <created>1671887164465</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1671887164465</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,20 +384,6 @@
     <MESSAGE value="修改用户表字段 mail -&gt; email" />
     <MESSAGE value="Md5工具类修改一行代码" />
     <MESSAGE value="修改Ip工具类" />
-    <MESSAGE value="邮件通知Service编写" />
-    <MESSAGE value="业务异常类新增构造方法，枚举类不使用lombok" />
-    <MESSAGE value="业务异常类新增构造方法修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务异常类新增构造方法修改" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="修改Ip工具类" />
   </component>
 </project>

@@ -2,18 +2,14 @@ package pers.iiifox.shop.user.controller;
 
 import com.google.code.kaptcha.Producer;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pers.iiifox.shop.exception.BizException;
 import pers.iiifox.shop.result.R;
-import pers.iiifox.shop.user.service.NotifyService;
 import pers.iiifox.shop.util.IpUtils;
 import pers.iiifox.shop.util.MD5Utils;
 
@@ -42,22 +38,14 @@ public class NotifyController {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    @Autowired
-    private NotifyService notifyService;
-
     @Operation(summary = "获取图形验证码")
     @GetMapping("/captcha")
     public R getCaptcha(HttpServletRequest request, HttpServletResponse response) {
         String captchaText = captchaProducer.createText();
         log.info("图形验证码: {}", captchaText);
-
-        // 图形验证码中的文字存入 Redis
-        String key = getCacheCaptchaKey(request);
-        redisTemplate.opsForValue().set(key, captchaText, 1, TimeUnit.MINUTES);
-
-        // 根据图形验证码的文字生成图形验证码，并写入 response
+        cacheCaptcha(request, captchaText);
         BufferedImage image = captchaProducer.createImage(captchaText);
-        try (ServletOutputStream outputStream = response.getOutputStream()) {
+        try(ServletOutputStream outputStream = response.getOutputStream()) {
             ImageIO.write(image, "jpg", outputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -65,34 +53,14 @@ public class NotifyController {
         return R.ok();
     }
 
-    @Operation(summary = "获取邮箱验证码(注册码)",
-            description = "提交邮箱和图形验证码，邮箱用来接收注册码",
-            parameters = {
-                    @Parameter(name = "to", description = "收件邮箱"),
-                    @Parameter(name = "captcha", description = "提交的图形验证码")
-            })
-    @GetMapping("/register_code")
-    public R getRegisterCode(@RequestParam("to") String to,
-                             @RequestParam("captcha") String captcha,
-                             HttpServletRequest request) {
-        String key = getCacheCaptchaKey(request);
-        String cacheCaptcha = redisTemplate.opsForValue().get(key);
-        if (captcha != null && captcha.equalsIgnoreCase(cacheCaptcha)) {
-            redisTemplate.delete(key);
-            // notifyService.sendRegisterCode(to);
-            return R.ok(notifyService.sendRegisterCode(to));
-        } else {
-            return R.error(new BizException("图形验证码错误"));
-        }
-    }
-
     /**
-     * 获取Redis缓存图形验证码的key
+     * 将图形验证码文字缓存到 Redis，有效期一分钟
      */
-    private String getCacheCaptchaKey(HttpServletRequest request) {
+    private void cacheCaptcha(HttpServletRequest request, String captchaText) {
         String ip = IpUtils.getRemoteIp(request);
         String userAgent = request.getHeader("User-Agent");
-        return "user:captcha:" + MD5Utils.md5(ip + userAgent);
+        String key = "user:captcha:" + MD5Utils.md5(ip + userAgent);
+        redisTemplate.opsForValue().set(key, captchaText, 1, TimeUnit.MINUTES);
     }
 
 }
