@@ -1,2 +1,6 @@
+pers\iiifox\shop\user\service\impl\NotifyServiceImpl.class
 pers\iiifox\shop\user\pojo\entity\UserDO.class
+pers\iiifox\shop\user\component\EmailComponent.class
 pers\iiifox\shop\user\pojo\entity\AddressDO.class
+pers\iiifox\shop\user\service\NotifyService.class
+pers\iiifox\shop\user\component\EmailComponent$1.class

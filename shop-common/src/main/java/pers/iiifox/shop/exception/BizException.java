@@ -33,4 +33,10 @@ public class BizException extends RuntimeException {
         this.message = message;
     }
 
+    public BizException(String message) {
+        super(message);
+        this.code = "xxxxx";
+        this.message = message;
+    }
+
 }
