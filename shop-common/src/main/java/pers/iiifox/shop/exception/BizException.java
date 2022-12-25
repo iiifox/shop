@@ -1,7 +1,7 @@
 package pers.iiifox.shop.exception;
 
 import lombok.Getter;
-import pers.iiifox.shop.enums.ErrorCodeEnum;
+import pers.iiifox.shop.result.ErrorCodeEnum;
 
 /**
  * @author 田章

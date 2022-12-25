@@ -2,7 +2,7 @@ package pers.iiifox.shop.util;
 
 import lombok.extern.slf4j.Slf4j;
 import pers.iiifox.shop.exception.BizException;
-import pers.iiifox.shop.enums.ErrorCodeEnum;
+import pers.iiifox.shop.result.ErrorCodeEnum;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -32,7 +32,7 @@ public final class MD5Utils {
         byte[] bytes = algorithm.digest(s.getBytes(StandardCharsets.UTF_8));
 
         // 将长度为 16 的 byte 数组，转为长度为 32 的 16 进制字符串
-        StringBuilder sb = new StringBuilder(bytes.length * 2);
+        StringBuilder sb = new StringBuilder(bytes.length << 1);
         for (byte b : bytes) {
             if ((b & 0xff) < 0x10) {
                 sb.append('0');

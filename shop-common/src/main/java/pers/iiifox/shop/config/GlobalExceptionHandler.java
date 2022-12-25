@@ -1,10 +1,11 @@
-package pers.iiifox.shop.result;
+package pers.iiifox.shop.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.iiifox.shop.exception.BizException;
+import pers.iiifox.shop.result.R;
 
 /**
  * @author 田章

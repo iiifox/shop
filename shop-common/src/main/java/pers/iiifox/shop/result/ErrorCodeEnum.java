@@ -1,4 +1,4 @@
-package pers.iiifox.shop.enums;
+package pers.iiifox.shop.result;
 
 /**
  * @author 田章

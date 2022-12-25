@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pers.iiifox.shop.enums.ErrorCodeEnum;
+import pers.iiifox.shop.result.ErrorCodeEnum;
 import pers.iiifox.shop.exception.BizException;
 import pers.iiifox.shop.result.R;
 import pers.iiifox.shop.user.service.NotifyService;
