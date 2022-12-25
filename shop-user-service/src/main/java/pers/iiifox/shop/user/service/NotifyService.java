@@ -11,7 +11,6 @@ public interface NotifyService {
      * 发送注册码
      *
      * @param to 接收注册码的邮箱地址
-     * @return 注册码
      */
-    int sendRegisterCode(String to);
+    void sendRegisterCode(String to);
 }

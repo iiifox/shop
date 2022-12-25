@@ -2,6 +2,7 @@ package pers.iiifox.shop.user.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.mail.MailAuthenticationException;
 import org.springframework.mail.MailParseException;
 import org.springframework.mail.MailSendException;
@@ -11,6 +12,7 @@ import pers.iiifox.shop.user.component.EmailComponent;
 import pers.iiifox.shop.user.service.NotifyService;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author 田章
@@ -23,6 +25,9 @@ public class NotifyServiceImpl implements NotifyService {
     @Autowired
     private EmailComponent emailComponent;
 
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
     @Value("${spring.mail.username}")
     private String from;
 
@@ -31,7 +36,7 @@ public class NotifyServiceImpl implements NotifyService {
     private static final Random RANDOM = new Random();
 
     @Override
-    public int sendRegisterCode(String to) {
+    public void sendRegisterCode(String to) {
         int code = RANDOM.nextInt(100000, 1000000);
         String data = String.format(CONTENT, code);
         try {
@@ -43,6 +48,8 @@ public class NotifyServiceImpl implements NotifyService {
         } catch (MailSendException e) {
             throw new BizException("邮件发送失败", e);
         }
-        return code;
+        // 将发送给邮箱的注册码存入 Redis，用于后续校验
+        String key = String.format("user:code:email:%s", to);
+        redisTemplate.opsForValue().set(key, String.valueOf(code), 3, TimeUnit.MINUTES);
     }
 }

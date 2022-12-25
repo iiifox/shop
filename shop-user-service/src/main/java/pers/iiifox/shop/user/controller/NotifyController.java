@@ -79,8 +79,8 @@ public class NotifyController {
         String cacheCaptcha = redisTemplate.opsForValue().get(key);
         if (captcha != null && captcha.equalsIgnoreCase(cacheCaptcha)) {
             redisTemplate.delete(key);
-            // notifyService.sendRegisterCode(to);
-            return R.ok(notifyService.sendRegisterCode(to));
+            notifyService.sendRegisterCode(to);
+            return R.ok();
         } else {
             return R.error(new BizException("图形验证码错误"));
         }

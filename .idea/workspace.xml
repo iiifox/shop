@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="业务异常类新增构造方法修改">
-      <change afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/RegExUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/component/EmailComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/NotifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/NotifyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" afterDir="false" />
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="git操作不太熟练，导致代码丢失。因此回到上一步">
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/exception/BizException.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/exception/BizException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/shop-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/shop-common-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/MailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/MailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/test/java/pers/iiifox/shop/user/service/impl/MailServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/NotifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/NotifyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/NotifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/NotifyServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/shop-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/shop-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +28,10 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -341,7 +341,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -376,16 +388,5 @@
     <MESSAGE value="业务异常类新增构造方法，枚举类不使用lombok" />
     <MESSAGE value="业务异常类新增构造方法修改" />
     <option name="LAST_COMMIT_MESSAGE" value="业务异常类新增构造方法修改" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
