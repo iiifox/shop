@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pers.iiifox.shop.enums.ErrorCodeEnum;
 import pers.iiifox.shop.exception.BizException;
 import pers.iiifox.shop.result.R;
 import pers.iiifox.shop.user.service.NotifyService;
@@ -75,11 +76,19 @@ public class NotifyController {
     public R getRegisterCode(@RequestParam("to") String to,
                              @RequestParam("captcha") String captcha,
                              HttpServletRequest request) {
-        String key = getCacheCaptchaKey(request);
-        String cacheCaptcha = redisTemplate.opsForValue().get(key);
+        // 对 IP 进行限制：一分钟内不允许重复发送邮箱获取验证码的请求
+        String key = String.format("user:code:limit:%s", IpUtils.getRemoteIp(request));
+        if (redisTemplate.opsForValue().get(key) != null) {
+            throw new BizException(ErrorCodeEnum.USER_ERROR_A0506);
+        }
+
+        String captchaKey = getCacheCaptchaKey(request);
+        String cacheCaptcha = redisTemplate.opsForValue().get(captchaKey);
         if (captcha != null && captcha.equalsIgnoreCase(cacheCaptcha)) {
-            redisTemplate.delete(key);
+            redisTemplate.delete(captchaKey);
             notifyService.sendRegisterCode(to);
+            // 发送成功，激活 IP 限制，不允许重复请求
+            redisTemplate.opsForValue().set(key, "", 1, TimeUnit.MINUTES);
             return R.ok();
         } else {
             return R.error(new BizException("图形验证码错误"));

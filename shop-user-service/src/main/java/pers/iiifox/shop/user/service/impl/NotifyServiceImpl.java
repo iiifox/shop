@@ -37,8 +37,10 @@ public class NotifyServiceImpl implements NotifyService {
 
     @Override
     public void sendRegisterCode(String to) {
+        // 生成六位数字的随机验证码
         int code = RANDOM.nextInt(100000, 1000000);
         String data = String.format(CONTENT, code);
+
         try {
             emailComponent.sendEmail(from, "Shop Register Code", data, to);
         } catch (MailParseException e) {
@@ -48,6 +50,7 @@ public class NotifyServiceImpl implements NotifyService {
         } catch (MailSendException e) {
             throw new BizException("邮件发送失败", e);
         }
+
         // 将发送给邮箱的注册码存入 Redis，用于后续校验
         String key = String.format("user:code:email:%s", to);
         redisTemplate.opsForValue().set(key, String.valueOf(code), 3, TimeUnit.MINUTES);

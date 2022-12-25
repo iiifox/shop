@@ -1,7 +1,6 @@
 package pers.iiifox.shop.user.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailAuthenticationException;
 import org.springframework.mail.MailParseException;
 import org.springframework.mail.MailSendException;
@@ -17,15 +16,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailComponent {
 
-    @Value("${spring.mail.username}")
-    private String from;
-
     @Autowired
     private JavaMailSender javaMailSender;
 
     /**
      * 发送邮件
      *
+     * @param from    发件人邮箱地址
      * @param subject 邮件主题
      * @param content 邮件内容
      * @param to      邮件接收地址
@@ -33,7 +30,7 @@ public class EmailComponent {
      * @throws MailAuthenticationException 发件人身份验证失败
      * @throws MailSendException           邮件发送失败
      */
-    public void sendEmail(String subject, String content, String... to) {
+    public void sendEmail(String from, String subject, String content, String... to) {
         javaMailSender.send(new SimpleMailMessage() {{
             setFrom(from);
             setSubject(subject);
