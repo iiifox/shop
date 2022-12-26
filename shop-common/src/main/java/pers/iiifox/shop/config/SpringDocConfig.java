@@ -49,7 +49,7 @@ public class SpringDocConfig {
         // String[] paths = {"/**"};
         // String[] packagedToMatch = {"pers.iiifox.shop.user"};
         return GroupedOpenApi.builder().group("用户模块")
-                .pathsToMatch("/api/address/v1/**")
+                .pathsToMatch("/api/address/v1/**", "/api/user/v1/**")
                 // .addOperationCustomizer((operation, handlerMethod) ->
                 //         operation.addParametersItem(new HeaderParameter()
                 //                 .name("groupCode")

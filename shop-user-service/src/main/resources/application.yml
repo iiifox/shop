@@ -21,3 +21,13 @@ mybatis-plus:
     db-config:
       # 主键策略
       id-type: assign_id
+
+qcloud:
+  # 腾讯云子账号密钥
+  secret-id: AKIDSoBNNBnBKH28zd4ILBpFSRDnALI2cz73
+  secret-key: nNiqlSvEJCrHTTFm8IEvOccOuCi17zyz
+  # 存储桶
+  cos:
+    region-name: ap-shanghai
+    bucket-name: shop-1314926265
+

@@ -4,15 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="限制同一个 ip 重复请求给邮箱发送注册码">
+    <list default="true" id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="全局异常处理器放入config包下，使得能被扫描">
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/component/COSComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/ErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/exception/BizException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/result/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/util/MD5Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/util/MD5Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/java/pers/iiifox/shop/user/controller/NotifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/config/SpringDocConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/src/main/java/pers/iiifox/shop/config/SpringDocConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/config/SpringDocConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/classes/pers/iiifox/shop/config/SpringDocConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-common/target/shop-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-common/target/shop-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/classes/pers/iiifox/shop/user/controller/NotifyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/shop-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-user-service/target/shop-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-user-service/target/test-classes/pers/iiifox/shop/user/service/impl/MailServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,13 +108,14 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;059d8b961b4c437c3bab7f6f4f03108a&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+      &quot;mysql&quot;,
+      &quot;redis&quot;
     ]
   }
 }</component>
@@ -122,11 +134,28 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pers.iiifox.shop.user.component" />
       <recent name="pers.iiifox.shop.user.service.impl" />
       <recent name="pers.iiifox.shop.util" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.UserApplication">
+    <configuration name="COSConfigTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.iiifox.shop.user.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.iiifox.shop.user.component" />
+      <option name="MAIN_CLASS_NAME" value="pers.iiifox.shop.user.component.COSConfigTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shop-user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.iiifox.shop.user.UserApplication" />
@@ -143,10 +172,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="JUnit.COSConfigTest.test" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ab00dac9-6d83-48dd-afc9-d0ef40c8498b" name="Changes" comment="" />
@@ -162,6 +195,9 @@
       <workItem from="1671754230292" duration="45789000" />
       <workItem from="1671827368004" duration="48239000" />
       <workItem from="1671917925752" duration="10507000" />
+      <workItem from="1671970374018" duration="2565000" />
+      <workItem from="1671999972083" duration="674000" />
+      <workItem from="1672058498475" duration="13394000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1671732513155</created>
@@ -352,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671940140187</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="全局异常处理器放入config包下，使得能被扫描">
+      <created>1671940648274</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671940648274</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +428,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="聚合工程添加lombok与test" />
     <MESSAGE value="服务通用模块添加web环境、mysql和MyBatis-Plus依赖" />
     <MESSAGE value="开始编写用户服务。MyBatisX插件自动生成代码+手动修改tinyint映射为Boolean" />
     <MESSAGE value="用户服务的数据源配置以及编写主启动类" />
@@ -410,6 +452,7 @@
     <MESSAGE value="git操作不太熟练，导致代码丢失。因此回到上一步" />
     <MESSAGE value="git操作不太熟练，导致代码丢失。11111" />
     <MESSAGE value="限制同一个 ip 重复请求给邮箱发送注册码" />
-    <option name="LAST_COMMIT_MESSAGE" value="限制同一个 ip 重复请求给邮箱发送注册码" />
+    <MESSAGE value="全局异常处理器放入config包下，使得能被扫描" />
+    <option name="LAST_COMMIT_MESSAGE" value="全局异常处理器放入config包下，使得能被扫描" />
   </component>
 </project>

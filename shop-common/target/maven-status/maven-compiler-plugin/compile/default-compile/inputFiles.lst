@@ -1,8 +1,8 @@
-F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\result\GlobalExceptionHandler.java
+F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\config\GlobalExceptionHandler.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\config\SpringDocConfig.java
-F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\enums\ErrorCodeEnum.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\util\IpUtils.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\util\MD5Utils.java
+F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\result\ErrorCodeEnum.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\config\LocalDateTimeFormatConfig.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\exception\BizException.java
 F:\projects\shop\shop-common\src\main\java\pers\iiifox\shop\result\R.java
