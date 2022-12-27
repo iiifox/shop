@@ -8,6 +8,9 @@ spring:
     host: smtp.qq.com
     username: tianzhang.chn@qq.com
     password: olsstrqeuhwbdedj
+  servlet:
+    multipart:
+      max-file-size: 500GB
 #    启动ssl安全连接就打开注释
 #    port: 465
 #    properties:

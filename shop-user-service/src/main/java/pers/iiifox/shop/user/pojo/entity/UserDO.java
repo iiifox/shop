@@ -35,7 +35,7 @@ public class UserDO implements Serializable {
     /**
      * 头像
      */
-    private String headImg;
+    private String avatar;
 
     /**
      * 个性签名

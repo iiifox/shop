@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.SchemaProperty;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -28,16 +29,14 @@ public class UserController {
     @Autowired
     private FileService fileService;
 
-    @Operation(summary = "用户头像上传",
-            requestBody = @RequestBody(
-                    content = @Content(mediaType = "multipart/form-data",
-                    schemaProperties = {
-                            @SchemaProperty(name = "file", schema = @Schema(type = "file"))
-                    })
+    @Operation(summary = "用户头像上传", requestBody = @RequestBody(content = @Content(
+            mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
+            schemaProperties = @SchemaProperty(
+                    schema = @Schema(name = "avatar", description = "头像", type = "file")
             )
-    )
+    )))
     @PostMapping(value = "/upload")
-    public R uploadHeaderImg(@RequestPart("file") MultipartFile file) {
-        return R.ok(fileService.upload(file));
+    public R uploadHeaderImg(@RequestPart("avatar") MultipartFile avatar) {
+        return R.ok(fileService.upload(avatar));
     }
 }

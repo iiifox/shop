@@ -60,7 +60,7 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
       `id` bigint(19) NOT NULL COMMENT '主键ID',
       `nickname` varchar(20) DEFAULT NULL COMMENT '昵称',
       `password` char(60) DEFAULT NULL COMMENT 'BCrypt加密后的密码',
-      `head_img` varchar(255) DEFAULT NULL COMMENT '头像',
+      `avatar` varchar(255) DEFAULT NULL COMMENT '头像，存储地址',
       `signature` varchar(255) DEFAULT NULL COMMENT '个性签名',
       `gender` tinyint(1) unsigned DEFAULT 1 COMMENT '0表示女，1表示男',
       `points` int(10) DEFAULT 0 COMMENT '积分',
@@ -97,6 +97,8 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
 - Spring Boot 2.6.11
 - Spring Cloud 2021.0.4
 - Spring Cloud Alibaba 2021.0.4.0
+- SpringDoc 生成符合 OpenApi3.0 规范的文档，同时便于后端测试
+- 腾讯云 COS 对象存储
 
 ### 环境搭建
 
@@ -107,6 +109,7 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
 | IntelliJ IDEA | 领先的 Java 和 Kotlin IDE            | https://www.jetbrains.com.cn/idea/download/         |
 | Typora        | Markdown 编辑器                      | https://typora.io/                                  |
 | MyBatisX      | MyBatis-Plus官方代码生成插件（idea） | https://plugins.jetbrains.com/plugin/10119-mybatisx |
+| .ignore       | IDEA 插件，用于生成 .ignore 文件     | https://plugins.jetbrains.com/plugin/7495--ignore   |
 
 #### 开发环境
 
@@ -114,4 +117,5 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
 | :---: | :----: | :----------------------------------------------------------: |
 |  JDK  |   17   | https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html |
 | MySQL |  8.0   |          https://dev.mysql.com/downloads/installer/          |
+| Redis |  7.0   |                  https://redis.io/download/                  |
 
