@@ -1,7 +1,6 @@
 package pers.iiifox.shop.user.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import pers.iiifox.shop.exception.BizException;
@@ -23,9 +22,6 @@ public class FileServiceImpl implements FileService {
 
     @Autowired
     private COSComponent cos;
-
-    @Value("${qcloud.cos.bucket-name}")
-    private String bucketName;
 
     @Override
     public String upload(MultipartFile file) {
