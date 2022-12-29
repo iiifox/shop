@@ -100,22 +100,62 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
 - SpringDoc 生成符合 OpenApi3.0 规范的文档，同时便于后端测试
 - 腾讯云 COS 对象存储
 
-### 环境搭建
+## 环境搭建
 
-#### 开发工具
+### 开发工具
 
-| 工具          | 说明                                 | 官网                                                |
-| ------------- | ------------------------------------ | --------------------------------------------------- |
-| IntelliJ IDEA | 领先的 Java 和 Kotlin IDE            | https://www.jetbrains.com.cn/idea/download/         |
-| Typora        | Markdown 编辑器                      | https://typora.io/                                  |
-| MyBatisX      | MyBatis-Plus官方代码生成插件（idea） | https://plugins.jetbrains.com/plugin/10119-mybatisx |
-| .ignore       | IDEA 插件，用于生成 .ignore 文件     | https://plugins.jetbrains.com/plugin/7495--ignore   |
+| 工具                      | 说明                                                         | 官网                                                    |
+| ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| IntelliJ IDEA             | 领先的 Java 和 Kotlin IDE                                    | https://www.jetbrains.com.cn/idea/download/             |
+| Typora                    | Markdown 编辑器                                              | https://typora.io/                                      |
+| SwitchHosts               | SwitchHosts 是一个管理 hosts 文件的应用，基于 [Electron](http://electron.atom.io/) 、[React](https://facebook.github.io/react/)、[UmiJS](https://umijs.org/) 、[Chakra UI](https://chakra-ui.com/)、[CodeMirror](http://codemirror.net/) 等技术开发。 | https://github.com/oldj/SwitchHosts/releases            |
+| VMware Workstation 17 Pro | 在 Windows 桌面上运行 Linux 虚拟机。                         | https://www.vmware.com/cn/products/workstation-pro.html |
+| XShell 7                  | SSH客户机                                                    | https://www.xshell.com/zh/free-for-home-school/         |
+| MyBatisX                  | MyBatis-Plus官方代码生成插件（idea）                         | https://plugins.jetbrains.com/plugin/10119-mybatisx     |
+| .ignore                   | IDEA 插件，用于生成 .ignore 文件                             | https://plugins.jetbrains.com/plugin/7495--ignore       |
 
-#### 开发环境
+### 环境准备
 
-| 工具  | 版本号 |                             下载                             |
-| :---: | :----: | :----------------------------------------------------------: |
-|  JDK  |   17   | https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html |
-| MySQL |  8.0   |          https://dev.mysql.com/downloads/installer/          |
-| Redis |  7.0   |                  https://redis.io/download/                  |
+- CentOS7上安装docker
+
+  ```sh
+  # step 1: 安装必要的一些系统工具
+  sudo yum install -y yum-utils
+  # Step 2: 添加软件源信息
+  sudo yum-config-manager \
+      --add-repo \
+      https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+  # Step 3: 更新并安装 Docker-CE
+  sudo yum makecache fast
+  sudo yum -y install docker-ce \
+      docker-ce-cli containerd.io docker-compose-plugin
+  # Step 4: 开启Docker服务
+  sudo service docker start
+  ```
+
+- 给docker配置镜像加速器 --> 阿里云 --> 容器镜像服务 --> 镜像加速器
+
+**MySQL**
+
+```sh
+docker pull mysql
+
+docker run --name mysql -p 3306:3306 \
+    -v /root/mysql/conf:/etc/mysql/conf.d \
+    -v /root/mysql/data:/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=123456 \
+    -d mysql
+```
+
+**Redis**
+
+```sh
+docker pull redis
+
+docker run --name redis -p 6379:6379 \
+    -v /root/redis/data:/data \
+    -d redis redis-server \
+    --appendonly yes \
+    --requirepass 123456
+```
 
