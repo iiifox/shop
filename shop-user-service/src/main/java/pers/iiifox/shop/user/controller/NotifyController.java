@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pers.iiifox.shop.result.ErrorCodeEnum;
 import pers.iiifox.shop.exception.BizException;
+import pers.iiifox.shop.result.ErrorCodeEnum;
 import pers.iiifox.shop.result.R;
 import pers.iiifox.shop.user.service.NotifyService;
 import pers.iiifox.shop.util.IpUtils;
@@ -46,7 +46,7 @@ public class NotifyController {
     @Autowired
     private NotifyService notifyService;
 
-    @Operation(summary = "获取图形验证码")
+    @Operation(summary = "获取图形验证码", description = "将图形验证码以流的形式写入响应中")
     @GetMapping("/captcha")
     public R getCaptcha(HttpServletRequest request, HttpServletResponse response) {
         String captchaText = captchaProducer.createText();
@@ -71,7 +71,8 @@ public class NotifyController {
             parameters = {
                     @Parameter(name = "to", description = "收件邮箱"),
                     @Parameter(name = "captcha", description = "提交的图形验证码")
-            })
+            }
+    )
     @GetMapping("/register_code")
     public R getRegisterCode(@RequestParam("to") String to,
                              @RequestParam("captcha") String captcha,
@@ -86,7 +87,7 @@ public class NotifyController {
         String cacheCaptcha = redisTemplate.opsForValue().get(captchaKey);
         if (captcha != null && captcha.equalsIgnoreCase(cacheCaptcha)) {
             redisTemplate.delete(captchaKey);
-            notifyService.sendRegisterCode(to);
+            notifyService.sendCode(to);
             // 发送成功，激活 IP 限制，不允许重复请求
             redisTemplate.opsForValue().set(key, "", 1, TimeUnit.MINUTES);
             return R.ok();

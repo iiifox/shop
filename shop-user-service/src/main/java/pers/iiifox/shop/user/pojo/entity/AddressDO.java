@@ -28,7 +28,7 @@ public class AddressDO implements Serializable {
     private Long userId;
 
     /**
-     * 是否默认收货地址：0->否，1->是
+     * 是否默认收货地址
      */
     private Boolean defaultAddress;
 

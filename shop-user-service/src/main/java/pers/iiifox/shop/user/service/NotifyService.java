@@ -8,9 +8,10 @@ package pers.iiifox.shop.user.service;
 public interface NotifyService {
 
     /**
-     * 发送注册码
+     * 发送验证码
      *
-     * @param to 接收注册码的邮箱地址
+     * @param to 接收验证码的邮箱地址
      */
-    void sendRegisterCode(String to);
+    void sendCode(String to);
+
 }

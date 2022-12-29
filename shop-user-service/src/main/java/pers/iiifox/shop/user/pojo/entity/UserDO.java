@@ -43,7 +43,7 @@ public class UserDO implements Serializable {
     private String signature;
 
     /**
-     * 0表示女，1表示男
+     * False表示女，True表示男
      */
     private Boolean gender;
 

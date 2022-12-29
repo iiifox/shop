@@ -36,7 +36,7 @@ public class NotifyServiceImpl implements NotifyService {
     private static final Random RANDOM = new Random();
 
     @Override
-    public void sendRegisterCode(String to) {
+    public void sendCode(String to) {
         // 生成六位数字的随机验证码
         int code = RANDOM.nextInt(100000, 1000000);
         String data = String.format(CONTENT, code);
