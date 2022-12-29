@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pers.iiifox.shop.exception.BizException;
 import pers.iiifox.shop.result.ErrorCodeEnum;
 import pers.iiifox.shop.result.R;
+import pers.iiifox.shop.user.constant.RedisKeyConstants;
 import pers.iiifox.shop.user.service.NotifyService;
 import pers.iiifox.shop.util.IpUtils;
 import pers.iiifox.shop.util.MD5Utils;
@@ -78,7 +79,7 @@ public class NotifyController {
                              @RequestParam("captcha") String captcha,
                              HttpServletRequest request) {
         // 对 IP 进行限制：一分钟内不允许重复发送邮箱获取验证码的请求
-        String key = String.format("user:code:limit:%s", IpUtils.getRemoteIp(request));
+        String key = String.format(RedisKeyConstants.USER_LIMIT_IP, IpUtils.getRemoteIp(request));
         if (redisTemplate.opsForValue().get(key) != null) {
             throw new BizException(ErrorCodeEnum.USER_ERROR_A0506);
         }
@@ -88,7 +89,7 @@ public class NotifyController {
         if (captcha != null && captcha.equalsIgnoreCase(cacheCaptcha)) {
             redisTemplate.delete(captchaKey);
             notifyService.sendCode(to);
-            // 发送成功，激活 IP 限制，不允许重复请求
+            // 发送成功，激活 IP 限制，不允许一分钟内的重复请求
             redisTemplate.opsForValue().set(key, "", 1, TimeUnit.MINUTES);
             return R.ok();
         } else {
@@ -102,7 +103,7 @@ public class NotifyController {
     private String getCacheCaptchaKey(HttpServletRequest request) {
         String ip = IpUtils.getRemoteIp(request);
         String userAgent = request.getHeader("User-Agent");
-        return "user:captcha:" + MD5Utils.md5(ip + userAgent);
+        return String.format(RedisKeyConstants.USER_CAPTCHA_CODE, MD5Utils.md5(ip + userAgent));
     }
 
 }

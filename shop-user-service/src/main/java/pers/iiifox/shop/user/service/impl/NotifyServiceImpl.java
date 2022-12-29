@@ -9,6 +9,7 @@ import org.springframework.mail.MailSendException;
 import org.springframework.stereotype.Service;
 import pers.iiifox.shop.exception.BizException;
 import pers.iiifox.shop.user.component.EmailComponent;
+import pers.iiifox.shop.user.constant.RedisKeyConstants;
 import pers.iiifox.shop.user.service.NotifyService;
 
 import java.util.Random;
@@ -52,7 +53,7 @@ public class NotifyServiceImpl implements NotifyService {
         }
 
         // 将发送给邮箱的注册码存入 Redis，用于后续校验
-        String key = String.format("user:code:email:%s", to);
+        String key = String.format(RedisKeyConstants.USER_REGISTER_CODE, to);
         redisTemplate.opsForValue().set(key, String.valueOf(code), 3, TimeUnit.MINUTES);
     }
 }
