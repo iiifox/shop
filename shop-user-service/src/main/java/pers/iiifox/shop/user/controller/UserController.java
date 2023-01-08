@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.media.SchemaProperty;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pers.iiifox.shop.result.R;
 import pers.iiifox.shop.user.pojo.request.UserRegisterRequest;
 import pers.iiifox.shop.user.service.FileService;
+import pers.iiifox.shop.user.service.UserService;
 
 /**
  * @author 田章
@@ -32,7 +32,11 @@ public class UserController {
     @Autowired
     private FileService fileService;
 
-    @Operation(summary = "用户头像上传",
+    @Autowired
+    private UserService userService;
+
+    @Operation(
+            summary = "用户头像上传",
             requestBody = @RequestBody(content = @Content(
                     mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
                     schemaProperties = @SchemaProperty(
@@ -46,15 +50,16 @@ public class UserController {
         return R.ok(fileService.upload(avatar));
     }
 
-    @Operation(summary = "用户注册",
+    @Operation(
+            summary = "用户注册",
             requestBody = @RequestBody(description = "用户注册请求实体类")
     )
     @PostMapping("/register")
     public R register(@RequestBody UserRegisterRequest userRegisterRequest) {
-        if (StringUtils.isBlank(userRegisterRequest.getCode())) {
-
-        }
-        return R.ok();
+//        if (StringUtils.isBlank(userRegisterRequest.getCode())) {
+//
+//        }
+        return R.ok(userService.register(userRegisterRequest));
     }
 
 }

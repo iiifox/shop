@@ -1,5 +1,6 @@
 package pers.iiifox.shop.user.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -55,5 +56,16 @@ public class NotifyServiceImpl implements NotifyService {
         // 将发送给邮箱的注册码存入 Redis，用于后续校验
         String key = String.format(RedisKeyConstants.USER_REGISTER_CODE, to);
         redisTemplate.opsForValue().set(key, String.valueOf(code), 3, TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean checkCode(String to, String code) {
+        String key = String.format(RedisKeyConstants.USER_REGISTER_CODE, to);
+        String value = redisTemplate.opsForValue().get(key);
+        if (StringUtils.isNotBlank(value) && value.equals(code)) {
+            redisTemplate.delete(key);
+            return true;
+        }
+        return false;
     }
 }

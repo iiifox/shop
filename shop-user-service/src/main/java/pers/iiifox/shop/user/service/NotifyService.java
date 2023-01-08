@@ -14,4 +14,13 @@ public interface NotifyService {
      */
     void sendCode(String to);
 
+    /**
+     * 校验验证码
+     *
+     * @param to   接收验证码的邮箱地址
+     * @param code 验证码
+     * @return 校验成功返回true，校验失败返回false
+     */
+    boolean checkCode(String to, String code);
+
 }

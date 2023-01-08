@@ -1,7 +1,9 @@
 package pers.iiifox.shop.user.service;
 
-import pers.iiifox.shop.user.pojo.entity.UserDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import pers.iiifox.shop.result.R;
+import pers.iiifox.shop.user.pojo.entity.UserDO;
+import pers.iiifox.shop.user.pojo.request.UserRegisterRequest;
 
 /**
 * @author tzh
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserService extends IService<UserDO> {
 
+    R register(UserRegisterRequest userRegisterRequest);
 }

@@ -7,17 +7,17 @@ import pers.iiifox.shop.user.mapper.AddressMapper;
 import org.springframework.stereotype.Service;
 
 /**
-* @author tzh
-* @description 针对表【address(收货地址表)】的数据库操作Service实现
-* @createDate 2022-12-23 04:32:52
-*/
+ * @author 田章
+ * @description 针对表【address(收货地址表)】的数据库操作Service实现
+ * @createDate 2022-12-23 04:32:52
+ */
 @Service
 public class AddressServiceImpl extends ServiceImpl<AddressMapper, AddressDO>
-    implements AddressService{
+        implements AddressService {
 
     @Override
     public AddressDO getAddress(long addressId) {
-        return super.getById(addressId);
+        return getById(addressId);
     }
 }
 

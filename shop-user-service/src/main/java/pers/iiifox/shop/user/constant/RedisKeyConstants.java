@@ -8,17 +8,17 @@ package pers.iiifox.shop.user.constant;
 public class RedisKeyConstants {
 
     /**
-     * 用户图形验证码
+     * 用户注册图形验证码
      */
-    public static final String USER_CAPTCHA_CODE = "user:captcha:%s";
+    public static final String USER_REGISTER_CAPTCHA = "user:register:captcha:%s";
 
     /**
      * 用户请求邮箱接收验证码（注册码）时 ip 一分钟限制
      */
-    public static final String USER_LIMIT_IP = "user:limit:%s";
+    public static final String USER_REGISTER_LIMIT = "user:register:limit:%s";
 
     /**
      * 用户验证码（注册码）
      */
-    public static final String USER_REGISTER_CODE = "user:code:%s";
+    public static final String USER_REGISTER_CODE = "user:register:code:%s";
 }

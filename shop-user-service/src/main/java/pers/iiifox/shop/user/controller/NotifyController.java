@@ -53,7 +53,7 @@ public class NotifyController {
         String captchaText = captchaProducer.createText();
         log.info("图形验证码: {}", captchaText);
 
-        // 图形验证码中的文字存入 Redis
+        // 图形验证码中的文字存入 Redis（有效时间一分钟）
         String key = getCacheCaptchaKey(request);
         redisTemplate.opsForValue().set(key, captchaText, 1, TimeUnit.MINUTES);
 
@@ -67,7 +67,8 @@ public class NotifyController {
         return R.ok();
     }
 
-    @Operation(summary = "获取邮箱验证码(注册码)",
+    @Operation(
+            summary = "获取邮箱验证码(注册码)",
             description = "提交邮箱和图形验证码，邮箱用来接收注册码",
             parameters = {
                     @Parameter(name = "to", description = "收件邮箱"),
@@ -79,7 +80,7 @@ public class NotifyController {
                              @RequestParam("captcha") String captcha,
                              HttpServletRequest request) {
         // 对 IP 进行限制：一分钟内不允许重复发送邮箱获取验证码的请求
-        String key = String.format(RedisKeyConstants.USER_LIMIT_IP, IpUtils.getRemoteIp(request));
+        String key = String.format(RedisKeyConstants.USER_REGISTER_LIMIT, IpUtils.getRemoteIp(request));
         if (redisTemplate.opsForValue().get(key) != null) {
             throw new BizException(ErrorCodeEnum.USER_ERROR_A0506);
         }
@@ -103,7 +104,7 @@ public class NotifyController {
     private String getCacheCaptchaKey(HttpServletRequest request) {
         String ip = IpUtils.getRemoteIp(request);
         String userAgent = request.getHeader("User-Agent");
-        return String.format(RedisKeyConstants.USER_CAPTCHA_CODE, MD5Utils.md5(ip + userAgent));
+        return String.format(RedisKeyConstants.USER_REGISTER_CAPTCHA, MD5Utils.md5(ip + userAgent));
     }
 
 }
