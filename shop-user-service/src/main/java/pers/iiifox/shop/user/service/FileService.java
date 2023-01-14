@@ -10,11 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 public interface FileService {
 
     /**
-     * 文件上传
+     * 上传图片
      *
-     * @param file 上传的文件对象
-     * @return 上传后的文件路径
+     * @param file 上传的文件(图片)对象
+     * @return 上传后的图片路径
      */
-    String upload(MultipartFile file);
+    String uploadImage(MultipartFile file);
 
 }

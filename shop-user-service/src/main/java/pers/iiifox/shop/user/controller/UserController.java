@@ -35,30 +35,27 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Operation(
-            summary = "用户头像上传",
+    @Operation(summary = "用户头像上传",
             requestBody = @RequestBody(content = @Content(
                     mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
                     schemaProperties = @SchemaProperty(
-                            schema = @Schema(name = "avatar", description = "头像", type = "file")
+                            name = "avatar",
+                            schema = @Schema(description = "头像", type = "string", format = "binary")
                     )
             )),
             responses = @ApiResponse(description = "头像路径")
     )
     @PostMapping(value = "/upload")
     public R uploadHeaderImg(@RequestPart("avatar") MultipartFile avatar) {
-        return R.ok(fileService.upload(avatar));
+        return R.ok(fileService.uploadImage(avatar));
     }
 
-    @Operation(
-            summary = "用户注册",
+    @Operation(summary = "用户注册",
             requestBody = @RequestBody(description = "用户注册请求实体类")
     )
     @PostMapping("/register")
-    public R register(@RequestBody UserRegisterRequest userRegisterRequest) {
-//        if (StringUtils.isBlank(userRegisterRequest.getCode())) {
-//
-//        }
+    public R register(@org.springframework.web.bind.annotation.RequestBody
+                      UserRegisterRequest userRegisterRequest) {
         return R.ok(userService.register(userRegisterRequest));
     }
 

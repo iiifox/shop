@@ -67,8 +67,7 @@ public class NotifyController {
         return R.ok();
     }
 
-    @Operation(
-            summary = "获取邮箱验证码(注册码)",
+    @Operation(summary = "获取邮箱验证码(注册码)",
             description = "提交邮箱和图形验证码，邮箱用来接收注册码",
             parameters = {
                     @Parameter(name = "to", description = "收件邮箱"),

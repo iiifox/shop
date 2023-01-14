@@ -1,5 +1,6 @@
 package pers.iiifox.shop.result;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import pers.iiifox.shop.exception.BizException;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(name = "R", description = "统一返回结果集类")
 public class R {
 
     /**
@@ -25,16 +27,13 @@ public class R {
      * 四位数字编号从 0001 到 9999，大类之间的步长间距预留 100，
      * </p>
      */
+    @Schema(name = "code", description = "错误码")
     private String code;
 
-    /**
-     * 描述信息
-     */
+    @Schema(name = "message", description = "错误信息描述")
     private String message;
 
-    /**
-     * 数据
-     */
+    @Schema(name = "data", description = "响应数据")
     private Object data;
 
     /**

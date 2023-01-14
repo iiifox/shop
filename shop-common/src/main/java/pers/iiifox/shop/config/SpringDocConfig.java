@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author 田章
- * @description OpenApi3.0 文档配置类
+ * @description OpenApi3.0 文档配置类 /swagger-ui/index.html
  * @date 2022/12/23
  */
 @Configuration
@@ -24,39 +24,10 @@ public class SpringDocConfig {
                         .license(new License().name("Apache 2.0").url("https://iiifox.github.io/")));
     }
 
-    // /**
-    //  * 根据@Tag 上的排序，写入x-order
-    //  *
-    //  * @return the global open api customizer
-    //  */
-    // @Bean
-    // public GlobalOpenApiCustomizer orderGlobalOpenApiCustomizer() {
-    //     return openApi -> {
-    //         if (openApi.getTags() != null) {
-    //             openApi.getTags().forEach(tag -> {
-    //                 Map<String, Object> map = new HashMap<>();
-    //                 tag.setExtensions(map);
-    //             });
-    //         }
-    //         if (openApi.getPaths() != null) {
-    //             openApi.addExtension("x-test123", "333");
-    //         }
-    //     };
-    // }
-
     @Bean
     public GroupedOpenApi userApi() {
-        // String[] paths = {"/**"};
-        // String[] packagedToMatch = {"pers.iiifox.shop.user"};
         return GroupedOpenApi.builder().group("用户模块")
                 .pathsToMatch("/api/address/v1/**", "/api/user/v1/**")
-                // .addOperationCustomizer((operation, handlerMethod) ->
-                //         operation.addParametersItem(new HeaderParameter()
-                //                 .name("groupCode")
-                //                 .example("测试")
-                //                 .description("集团code")
-                //                 .schema(new StringSchema()._default("BR").name("groupCode").description("集团code"))
-                //         ))
                 .build();
     }
 

@@ -68,7 +68,7 @@ CREATE DATABASE `shop_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_genera
       `create_time` datetime NOT NULL COMMENT '创建时间',
       `update_time` datetime NOT NULL COMMENT '更新时间',
       PRIMARY KEY (`id`),
-      UNIQUE KEY `uk_email` (`email`(16))
+      UNIQUE KEY `uk_email` (`email`)
     ) ENGINE=InnoDB COMMENT='用户表';
     ```
 

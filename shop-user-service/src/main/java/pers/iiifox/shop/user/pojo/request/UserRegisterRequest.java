@@ -15,7 +15,7 @@ public class UserRegisterRequest {
     @Schema(name = "nickname", description = "昵称", example = "iiifox")
     private String nickname;
 
-    @Schema(name = "password", description = "BCrypt加密后的密码")
+    @Schema(name = "password", description = "密码", example = "iiifox")
     private String password;
 
     @Schema(name = "avatar", description = "头像网址",
@@ -25,7 +25,7 @@ public class UserRegisterRequest {
     @Schema(name = "signature", description = "个性签名", example = "没有签名就是最好的签名")
     private String signature;
 
-    @Schema(name = "gender",description = "性别。False表示女，True表示男", example = "True")
+    @Schema(name = "gender", description = "性别。False表示女，True表示男", example = "True")
     private Boolean gender;
 
     @Schema(name = "email", description = "电子邮箱", example = "3111628591@qq.com")

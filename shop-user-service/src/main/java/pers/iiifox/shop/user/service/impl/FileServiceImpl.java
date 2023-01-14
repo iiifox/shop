@@ -24,7 +24,7 @@ public class FileServiceImpl implements FileService {
     private COSComponent cos;
 
     @Override
-    public String upload(MultipartFile file) {
+    public String uploadImage(MultipartFile file) {
         // 获取原始文件名
         String originalFilename = file.getOriginalFilename();
         if (originalFilename == null) {
@@ -32,11 +32,19 @@ public class FileServiceImpl implements FileService {
         }
         // 文件后缀名
         String suffix = originalFilename.substring(originalFilename.lastIndexOf('.'));
-        String key = new StringBuilder("user/")
-                .append(DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDateTime.now()))
-                .append('/')
-                .append(UUID.randomUUID().toString().replaceAll("-", ""))
-                .append(suffix).toString();
+        // 文件后缀名必须是 .jpg .jpeg .png 三种之一
+        if (".jpg".equalsIgnoreCase(suffix) || ".jpeg".equalsIgnoreCase(suffix) || ".png".equalsIgnoreCase(suffix)) {
+            String key = new StringBuilder("user/")
+                    .append(DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDateTime.now()))
+                    .append('/')
+                    .append(UUID.randomUUID().toString().replaceAll("-", ""))
+                    .append(suffix).toString();
+            return this.upload(file, key);
+        }
+        throw new BizException("请上传正确的图片类型");
+    }
+
+    private String upload(MultipartFile file, String key) {
         try {
             return cos.upload(file, key);
         } catch (Exception e) {

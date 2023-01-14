@@ -1,6 +1,5 @@
 package pers.iiifox.shop.user.service.impl;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -33,14 +32,14 @@ public class NotifyServiceImpl implements NotifyService {
     @Value("${spring.mail.username}")
     private String from;
 
-    private static final String CONTENT = "您的验证码为：%d，有效时间三分钟，请勿泄露于他人！";
+    private static final String CONTENT = "您的验证码为：%s，有效时间三分钟，请勿泄露于他人！";
 
     private static final Random RANDOM = new Random();
 
     @Override
     public void sendCode(String to) {
         // 生成六位数字的随机验证码
-        int code = RANDOM.nextInt(100000, 1000000);
+        String code = String.format("%06d", RANDOM.nextInt(1000000));
         String data = String.format(CONTENT, code);
 
         try {
@@ -55,14 +54,13 @@ public class NotifyServiceImpl implements NotifyService {
 
         // 将发送给邮箱的注册码存入 Redis，用于后续校验
         String key = String.format(RedisKeyConstants.USER_REGISTER_CODE, to);
-        redisTemplate.opsForValue().set(key, String.valueOf(code), 3, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(key, code, 3, TimeUnit.MINUTES);
     }
 
     @Override
     public boolean checkCode(String to, String code) {
         String key = String.format(RedisKeyConstants.USER_REGISTER_CODE, to);
-        String value = redisTemplate.opsForValue().get(key);
-        if (StringUtils.isNotBlank(value) && value.equals(code)) {
+        if (code != null && code.equals(redisTemplate.opsForValue().get(key))) {
             redisTemplate.delete(key);
             return true;
         }
